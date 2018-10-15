@@ -23,8 +23,10 @@ IF entry is found RETURN entry
 
 Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
 
-greaterThan = (num1, num2) => {
-	if (num1>num2) {
-	console.log(num1);
-	} else console.log(num2);
+var searchPhonebook = function (criteriaInput, phonebook) {
+ for (let i=0; i<phonebook.length; i++){
+  if (criteriaInput === phonebook[i].name) {
+   return phonebook[i].entry;
+   }
+ }
 }
