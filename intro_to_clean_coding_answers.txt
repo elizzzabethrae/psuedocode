@@ -1,0 +1,162 @@
+1. What is clean coding?
+
+Clean coding is all about simplicity and ease of use. To write really clean code, you have to think about how concise you can write your code and functions. This often involves looking back at code written, and figuring out where you can make it better. There are lots of way to create cleaner code, but you may want to implement some ideals like DRY or the squint test to get started.
+
+2. Toyota Article Reflection
+
+The Toyota article was concerning! I bet their code did not follow the squint test ;)
+Another object that also uses code in my daily life are traffic lights! Just like a car, if the code malfunctions in a traffic light or walk signal, people can die! It could lead to car crashes, or worse, pedestrian car crashes.
+
+3. Code example
+
+The code itself is relatively clean, with only two levels of nested code. However, instead of using x and y, it would be better to use descriptive variables, like Celsius and Fahrenheit. I knew they needed to be more descriptive because of the sheer amount of comments!
+
+Refactored Code: 
+INPUT temperature
+INPUT degree type
+
+FUNCTION convert              
+ IF degreeType EQUALS "Farenheit" THEN              
+  RUN convertFarenheitToCelcius with x                
+ ELSE IF y EQUALS "Celcius" THEN          
+  RUN convertCelciusToFarenheit with x                      
+ END IF
+END FUNCTION
+
+FUNCTION convertFarenheitToCelcius
+ RUN newTemperature by doing (temperature−32) * (5/9) 
+RETURN newTemperature
+END FUNCTION
+
+FUNCTION convertCelciusToFarenheit
+ Run newTemperature by doing temperature * 1.8000 + 32.00 
+RETURN newTemperature
+END FUNCTION
+
+4. Code example
+
+This one has too many steps, steps 1 and 3 can be combined.
+
+Refactored Code: 
+INPUT sum
+INPUT total
+
+FUNCTION calculatePercent
+ IF total DOES NOT EQUAL 0
+  SET percentage as COMPUTING sum/total * 100
+  RETURN percentage
+ ELSE 
+  RETURN "Sorry, cannot divide by 0"
+ END IF
+END FUNCTION
+
+5A Code Example
+
+INPUT subTotal
+INPUT discountRate
+INPUT paymentType
+INPUT cashGiven
+
+FUNCTION amountDue
+   LET amountDue = subTotal * discountRate + (subTotal * tax)
+   PRINT "Your total due is: " + amountDue
+   CALL checkOutCustomer
+
+	FUNCTION checkOutCustomer  
+ 	 IF paymentType = 'CASH' THEN
+    	   LET changeDue EQUAL cashGiven - amountDue
+      	   PRINT "Change due: " + changeDue
+   
+  	 ELSE IF paymentType = 'CREDIT CARD' THEN
+      	   PRINT "Your credit card has been charged: amountDue
+   	END IF
+END FUNCTION
+
+5B Code Example
+
+INPUT book
+INPUT guest
+
+FUNCTION checkoutBook
+ IF guest.accountActive AND IF NOT (guest.hasOverdueBooks) AND guest.outstandingFees = 0 THEN
+        APPEND book to guest.books
+        SET book.status to "Checked Out"
+        PRINT "Your books have been issued."
+ ELSE
+     PRINT "Unable to check out book."
+ END IF
+END FUNCTION
+
+5C Code Example
+
+CLASS BankAccountBalance
+
+ FUNCTION displayBalance
+    PRINT balance
+ END FUNCTION
+END Class
+
+CLASS BankAccountDeposit
+ INPUT depositAmount
+ FUNCTION deposit(depositAmount)
+    SET balance to balance + depositAmount
+ END FUNCTION
+END CLASS
+
+CLASS BankAccountWithdrawl
+ INPUT withdrawAmount 
+ FUNCTION withdraw(withdrawAmount)
+     IF balance > amount THEN
+       SET balance to balance - amount
+     END
+ END FUNCTION
+END CLASS
+
+CLASS CreditCardOffer
+ FUNCTION creditCardOffer
+     IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+     END
+ END FUNCTION
+END CLASS
+
+CLASS Status
+ FUNCTION checkStatus
+     IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+     END
+ END FUNCTION
+END CLASS
+
+ ....
+ ....
+ ....
+
+END
+
+6. Programming Question:
+
+squared = (array) => {
+  sum = 0
+  for (let i=0; i<array.length; i++) {
+    var newSum = (sum += array[i]);
+    var squareRoot = Math.sqrt(newSum);
+  } {
+  if (newSum == squareRoot * squareRoot) {
+    console.log(squareRoot);
+  } else console.log(newSum);
+  }
+}
+
+7. Programming Question:
+
+var findDuplicates = function(array) {
+  for (var i=0; i<array.length; i++) {
+    for(var j=0; j<=array.length; j++) {
+      if(i != j && array[i] == array[j]){
+        return true;
+      }
+    }
+  }
+  return false;
+}
