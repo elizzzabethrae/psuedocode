@@ -1,0 +1,33 @@
+1. Code Work
+var riders = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+riders.push("Mary");
+
+findJosh = (array) => {
+  for(let i=0; i<array.length; i++){
+    if (array[i] === "Josh") {
+     console.log(array.indexOf(array[i]));
+    }
+  }
+}
+findJosh(riders);
+
+findEmily = (array) => {
+  for (let i=0; i<array.length; i++) {
+    if (array[i] === "Emily") {
+      console.log(array.indexOf(array[i]));
+    } 
+  } console.log('There is no Emily');
+}
+findEmily(riders);
+
+riders.splice(1, 0, "Melissa");
+console.log(riders);
+
+riders.splice(4, 1);
+
+console.log(riders);
+
+2. Another example you could use would be taking RSVPs to a first come, first serve event, like a yoga class. You would need to take names and keep order of who has RSVP'd, and the order in case you need to cut off registrations. You could also intake information like are they a member? And if they have to pay for their class yet.
+
+3. Developers would have access to a lot of information in the yoga class example, since a class registration takes in quite a lot of info, like are they a member? Did they already pay for the class? Do you have a promotion going for certain members? They would also need to access names and keep order of who has RSVP'd, and the order in case you need to cut off registrations. 
