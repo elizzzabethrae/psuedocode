@@ -1,0 +1,29 @@
+1. The difference between stack and queue is the way they handle the data.
+A stack uses the Last in Last out structure, while a Queue uses the First in First out model. 
+
+2.Stacks and Queues both are ways to handle data and requests. They both keep information neat and organized, with very predictable ways of taking care of requests.
+
+3. For UNDO and REDO in Microsoft Word, you would want to use the Last in First out data structure, because UNDO and REDO apply to the very last thing that happened in the document. If it had First in First out, users would forget the order of events and have to use the command a ton of times to get to the last action.
+
+Programming Questions
+
+1. Two ways to reverse a string: 
+
+reverse = (string) => {
+  var backwardsString = string.split("").reverse().join("");
+  return backwardsString;
+}
+reverse('Bloc!');
+
+-OR-
+
+function reverseString(string) {
+    var newString = "";
+    for (let i = string.length - 1; i >= 0; i--) {
+        newString += string[I];
+    }
+    return newString;
+}
+reverseString('Bloc!');
+
+2. 
