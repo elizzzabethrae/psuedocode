@@ -26,4 +26,35 @@ function reverseString(string) {
 }
 reverseString('Bloc!');
 
-2. 
+2.
+
+class Queue {
+ constructor () {
+    this.queue = [];//where the elements are saved
+  }
+
+  pop(element){
+    let temp = element;
+    queue.pop.temp();
+    return temp;
+  }
+  
+}
+
+3. 
+
+class Queue {
+ constructor () {
+  }
+
+ var enqueue = function(item){
+  list.push(item);
+ }
+
+ var dequeue = function (list, item) {
+   let temp = list[0];
+   list.splice(0, 1);
+   return temp;
+ }
+}
+}
