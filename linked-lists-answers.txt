@@ -1,0 +1,23 @@
+1. Pros and Cons of linked lists versus arrays
+
+The pros of linked lists is that each node can be stored anywhere within the memory. This independence of node memory allows the lists to grow larger than a typical array. 
+
+The cons of linked lists is that because the nodes can be stored anywhere, the way you access a node is via the previous node. That means, if you want to find a specific node, you have to start from the beginning and go through the entire list until you find what you are looking for. This makes it hard to find specific nodes quickly. 
+
+2. Real world example of a linked list
+
+An example of a linked list is a train. You have to go in order from engine to caboose, and cannot skip around when you want to.
+
+Programming Questions
+
+1. The issue with this code is the `else` statement. In the `if` statement we already define the current node as the head if there isn't already one, and then the `else` statement sets it again regardless. 
+
+var push = function(element) {
+  var node.value = element;
+  var node.next = null;
+  if (!node.head) {
+   node.head=element;
+  } else { current.next=element;}
+}
+
+2. 
