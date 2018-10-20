@@ -10,14 +10,50 @@ An example of a linked list is a train. You have to go in order from engine to c
 
 Programming Questions
 
-1. The issue with this code is the `else` statement. In the `if` statement we already define the current node as the head if there isn't already one, and then the `else` statement sets it again regardless. 
+1. The issue is with using 'current'. It should only be element. 
 
 var push = function(element) {
   var node.value = element;
   var node.next = null;
   if (!node.head) {
    node.head=element;
-  } else { current.next=element;}
+  } else {node.head.next=element && node.element.next =null;}
 }
 
 2. 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+
+  var findDuplicates = function(list) {
+    let tempNode = list.head.node;
+    while (tempNode != null && tempNode.next != null)
+    if (tempNode.value == list.node.value) {
+     tempNode.next = list.node.next;
+    }
+  }
+  return list;
+}
+
+3.
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+
+  var reverseList = function(list) {
+   var newList = "";
+   while(list.node != null){
+     if (list.node.next == null && 
+      newList.node.head == null) {
+       list.node.current = newList.head.node;
+     } else if (list.node.next == null) {
+        list.node.current== newList.head.next;
+     }
+     }
+     return newList;
+  }
+}
