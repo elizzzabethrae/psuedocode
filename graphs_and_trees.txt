@@ -1,0 +1,81 @@
+QUESTIONS
+
+1. What is a binary tree and what makes it unique to other trees?
+
+A general tree structure includes nodes of data starting with the head at the top of the tree and moving down. Binary trees allow nodes to only have up to two children, with the larger value to the right.
+
+2. What is a heuristic?
+
+Heuristic is also known as 'your best guess'. Basically it is the idea that the computer will usually get to the correct answer eventually, but it might not be the best or most efficient path. Heuristic is used when data structures are huge, and you sacrifice accuracy in place for faster results sometimes.
+
+3. What is another problem besides the shortest-path problem that requires the use of heuristics?
+
+A great example in real life is 'reading' through a terms of use policy before using an app. Those pages are written in legal wording, and are super lengthy. Often people skim through it and just click OK and move on, without actually figuring out if it will be detrimental to you to use the app.
+
+4. What is the difference between a depth-first search and a breadth-first search?
+
+Depth first search will travel along a specific path of nodes, example, the rightmost node. A breadth first search will go through rows rather than arms. 
+
+5. Explain in your own words what an undirected, a-cyclic, unweighted graph is.
+
+Undirected means that there is no specific destination next (unlike a linked list)
+A-cyclic means it cannot loop back on itself. 
+Unweighted means that there is no value assigned to certain paths, telling you if it is faster or more beneficial to go one way.
+
+6. What kind of graph is a binary search tree?
+
+Directed, a-cyclic, unweighted
+
+Programming Questions
+
+1. For this function, you would want to search the tree's nodes with Bredth or Depth searches, looking for a value. When you find 
+
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+
+searchTree (value) {
+  let current = this.root;
+  while (current) {
+    if (value === current.value) {
+     return true
+    } 
+    if (value < current.value) {
+     current = current.left;
+    } else {
+     current = current.right;
+    }
+   }
+   return false;
+}
+
+2. To find the distance between two particular nodes, you need to find the lowest common ancestor first, and then find the distance from the ancestor to each individual node. The answer is adding those two distances together.
+
+ 
+class Tree {
+ constructor(value) {
+   this.root = null;
+   this.value = value;
+   this.left = null; 
+   this.right = null;
+  }
+    lowestCommonAncestor(p, q) {
+        if (this.value > p.value && this.value > q.value) {
+          return this.left.lowestCommonAncestor(p, q);
+        }
+        else if (root.value < p.value && root.value < q.value) {
+          return this.right.lowestCommonAncestor(p, q);
+        } else {
+          return this;
+        }
+      }
+
+    var distanceBetweenTwoNodes = function (p, q){
+        let left = lowestCommonAncestor.findDistance(p);
+        let right = lowestCommonAncestor.findDistance(q);
+
+        return right + left;
+     }
+};
+
