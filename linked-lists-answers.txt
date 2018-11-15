@@ -10,50 +10,140 @@ An example of a linked list is a train. You have to go in order from engine to c
 
 Programming Questions
 
-1. The issue is with using 'current'. It should only be element. 
+1. The issue is that the function has no class constructors for the list and noedes. We need those to move forward.
 
-var push = function(element) {
-  var node.value = element;
-  var node.next = null;
-  if (!node.head) {
-   node.head=element;
-  } else {node.head.next=element && node.element.next =null;}
-}
-
-2. 
 class Node {
-  constructor(value) {
-    this.value = value;
+  constructor(element) {
+    this.element = element;
     this.next = null;
   }
+}
 
-  var findDuplicates = function(list) {
-    let tempNode = list.head.node;
-    while (tempNode != null && tempNode.next != null)
-    if (tempNode.value == list.node.value) {
-     tempNode.next = list.node.next;
+class List {
+  constructor() {
+    this.head = null;
+    this.length = 0;
+  }
+  
+  push(element) {
+    let node = new Node(element);
+    let current;
+    
+    if(this.head == null) {
+      this.head = node;
+    } else {
+     current = this.head;
+      while(current.next) {
+        current = current.next;
+      }
+      
+      current.next = node;
     }
-  }
-  return list;
-}
-
-3.
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-
-  var reverseList = function(list) {
-   var newList = "";
-   while(list.node != null){
-     if (list.node.next == null && 
-      newList.node.head == null) {
-       list.node.current = newList.head.node;
-     } else if (list.node.next == null) {
-        list.node.current== newList.head.next;
-     }
-     }
-     return newList;
+    this.length++;
   }
 }
+
+2 Remove Dupes
+
+function LinkedList() {
+     var length = 0;
+     var head = null;
+
+    var Node = function(element) {
+      this.element = element;
+      this.next = null;
+    };
+
+  this.head = function() {
+    return head;
+  };
+
+  this.size = function() {
+    return length;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    head = this.head;
+    if(head === null){
+      head = node;
+    } else {
+      var currentNode = head;
+      while(currentNode.next) {
+        currentNode=currentNode.next;
+      }
+      currentNode.next = node;
+    }
+    length++;
+  };
+
+  this.removeDuplicates = function(list) {
+    var currentNode = head;
+    var previousNode;
+    var occurances = [];
+
+  while (this.length <= length) {
+    occurances.push(currentNode.element);
+    for (let i=0; i<this.length; i++){
+     if (occurances[i] == this.element) {
+        previousNode = currentNode;
+        currentNode = currentNode.next;
+      } 
+    previousNode.next = currentNode.next;
+    }}
+   length--;
+  };
+}
+
+
+3. Reverse
+
+function LinkedList() {
+     var length = 0;
+     var head = null;
+
+    var Node = function(element) {
+      this.element = element;
+      this.next = null;
+    };
+
+  this.head = function() {
+    return head;
+  };
+
+  this.size = function() {
+    return length;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    head = this.head;
+    if(head === null){
+      head = node;
+    } else {
+      var currentNode = head;
+      while(currentNode.next) {
+        currentNode=currentNode.next;
+      }
+      currentNode.next = node;
+    }
+    length++;
+  };
+
+var reverseLinkedList = function(linkedlist) {
+  var node = linkedlist;
+  var previous = null;
+
+  while(node) {
+    var save = node.next;
+    node.next = previous;
+    previous = node;
+    node = save;
+  }
+  return previous;  
+};
+
+linkedlist = reverseLinkedList;
+}
+
+
